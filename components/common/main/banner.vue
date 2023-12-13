@@ -2,11 +2,9 @@
   <div :class="[{'banner--mobile': !$device.isDesktop}, {'banner--desktop': $device.isDesktop}]">
     <h1 class="banner-title">
       <span class="banner-hidden">Kidup.kz - </span>
-      Центры и кружки <br/>в одном месте
+      {{ $t('bannerTitle') }}
     </h1>
-    <h2 class="banner-subtitle">
-      Лучшие места и занятия для развития ваших детей
-    </h2>
+    <h2 class="banner-subtitle">{{ $t('bannerSubtitle') }}</h2>
     <button
         class="banner-action"
         @click="goLessons()"
@@ -26,14 +24,17 @@ const goLessons = () => {
 
 <style lang="scss" scoped>
 .banner--mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  justify-content: space-between;
   background-image: url("/banner.jpg");
+  background-position: center;
   width: calc(100% - 35% - #{$side-space-mobile});
   height: 55vw;
   background-size: cover;
   color: white;
-  padding-right: 35%;
-  padding-left: $side-space-mobile;
-  padding-top: $side-space-mobile;
+  padding: 10vw 35% 10vw $side-space-mobile;
 
   .banner-title {
     font-size: 5vw;
@@ -42,21 +43,21 @@ const goLessons = () => {
   }
 
   .banner-subtitle {
-    margin-top: 6vw;
     font-size: 3vw;
     line-height: 1.5;
     text-transform: uppercase;
+    margin-top: 16px;
   }
 
   .banner-action {
     display: inline-block;
-    margin-top: 7vw;
     background-color: #F9705A;
     color: white;
     font-size: 4.5vw;
     padding: 8px 12px;
     border-radius: 10px;
     box-shadow: 0px 0px 8px 3px rgba(34, 60, 80, 0.25);
+    margin-top: 40px;
   }
 
   .banner-hidden {
