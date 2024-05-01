@@ -9,7 +9,7 @@
 <script setup>
 import BaseButton from "../../base/BaseButton";
 
-const goPartner = () => window.location.href = 'https://kidup.kz/adminpanel/registration'
+const goPartner = () => window.location.href = 'https://kidup.kz/adminpanel'
 </script>
 
 <style lang="scss" scoped>
