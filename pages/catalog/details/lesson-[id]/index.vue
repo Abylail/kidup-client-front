@@ -52,10 +52,10 @@
     </div>
 
     <!-- Контакты -->
-    <div class="contacts container--white">
-      <h3 class="title">Контакты</h3>
-      <div class="description-text">Оставьте заявку, что бы администратор центра вам позвонил</div>
-      <call-request :center="institutionInfo"/>
+    <div class="center-info-contacts container--white">
+      <h3 class="center-info-title">Контакты</h3>
+      <div v-if="institutionInfo?.call_phone">Телефон: <a :href="`tel:+${institutionInfo.call_phone}`">{{ institutionInfo.call_phone }}</a></div>
+      <div v-if="institutionInfo?.whatsapp_phone">WhatsApp: <a :href="`https://wa.me/${institutionInfo.whatsapp_phone}`">Написать</a></div>
     </div>
 
     <center-card
@@ -223,6 +223,14 @@ onMounted(() => {
     margin-top: 16px;
   }
 
+  .center-info-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    font-size: $fs--title;
+    margin-bottom: 8px;
+  }
+
 }
 
 .lesson-info--desktop {
@@ -289,5 +297,17 @@ onMounted(() => {
     column-gap: 16px;
   }
 
+  .center-info-title {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    font-size: $fs--title;
+    margin-bottom: 8px;
+  }
+
+}
+
+.center-info-contacts {
+  line-height: 24px;
 }
 </style>

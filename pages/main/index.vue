@@ -25,10 +25,6 @@
       </card-list>
     </div>
 
-<!--    <div class="main-page-block">-->
-      <banner-toys title go-catalog/>
-<!--    </div>-->
-
     <!-- Топ центры -->
     <div class="main-page-block">
       <card-list title="Топ центры" to="/catalog/almaty/centers">
@@ -39,8 +35,11 @@
       </card-list>
     </div>
 
+    <!-- Хочу стать партнером -->
+    <want-partner/>
+
     <!-- Напишите нам -->
-    <still-questions/>
+<!--    <still-questions/>-->
 
     <subjects-feed title="Интересные занятия"/>
 
@@ -57,7 +56,7 @@ import SubjectsFeed from "../../components/common/main/subjectsFeed";
 import StillQuestions from "../../components/common/main/stillQuestions";
 import Banner from "../../components/common/main/banner";
 import LessonsCollectionCard from "../../components/common/main/lessonsCollectionCard";
-import BannerToys from "../../components/common/main/bannerToys";
+import WantPartner from "../../components/common/main/wantPartner";
 const { $device } = useNuxtApp();
 
 const mainStore = useMainStore();

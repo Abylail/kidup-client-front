@@ -44,8 +44,8 @@
 
     <div class="center-info-contacts container--white">
       <h3 class="center-info-title">Контакты</h3>
-      <div class="center-info-description-text">Оставьте заявку, что бы администратор центра вам позвонил</div>
-      <call-request :center="centerInfo"/>
+      <div v-if="centerInfo.call_phone">Телефон: <a :href="`tel:+${centerInfo.call_phone}`">{{ centerInfo.call_phone }}</a></div>
+      <div v-if="centerInfo.whatsapp_phone">WhatsApp: <a :href="`https://wa.me/${centerInfo.whatsapp_phone}`">Написать</a></div>
     </div>
 
     <div class="center-info-map container--white">
@@ -184,6 +184,7 @@ onMounted(() => {
 
   .center-info-contacts {
     margin: 16px 0;
+    line-height: 24px;
   }
 
   .center-info-map {
@@ -271,6 +272,7 @@ onMounted(() => {
 
   .center-info-contacts {
     max-width: 300px;
+    line-height: 24px;
   }
 
   .center-info-subjects {

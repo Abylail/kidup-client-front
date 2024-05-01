@@ -19,11 +19,6 @@
       <registrations @select="selectRegistration($event)"/>
     </div>
 
-    <div class="account__block" v-if="toySubscriberStore.getSubscribe">
-      <div class="title">Подписка на игрушки</div>
-      <toy-subsribe/>
-    </div>
-
   </div>
 
   <!-- Не авторизованный -->
@@ -46,10 +41,7 @@ import AuthModal from "../../components/common/auth/authModal";
 import BaseButton from "../../components/base/BaseButton";
 import Registrations from "../../components/common/account/registrations";
 import {useRouter} from "nuxt/app";
-import ToySubsribe from "../../components/common/account/toySubsribe";
-import {useToySubscribe} from "../../store/client/parent/toySubscribe";
 const authStore = useAuthStore();
-const toySubscriberStore = useToySubscribe();
 
 const openAuth = ref(false);
 
@@ -58,8 +50,6 @@ const router = useRouter();
 const selectRegistration = registration => {
   router.push(`/account/registrations/${registration.id}`)
 }
-
-toySubscriberStore.fetchSubscribe();
 
 useSeoMeta({
   title: "Kidup - личный кабинет",
